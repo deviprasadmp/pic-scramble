@@ -1,0 +1,66 @@
+buildscript {
+
+    repositories {
+        
+        mavenCentral()
+    }
+    
+//    dependencies {
+//        
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.2.RELEASE")
+//    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+//apply plugin: 'io.spring.dependency-management'
+//dependencyManagement {
+//
+//    imports {
+//
+//        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+//    }
+//}
+
+group = 'net.devip'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 8
+//mainClassName = 'net.devip.inet.minder.Main'
+
+repositories {
+    
+    mavenCentral()
+}
+
+dependencies {
+
+//    implementation('org.springframework.boot:spring-boot-starter')
+//    compile group: 'org.springframework', name: 'spring-jdbc'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'com.beust', name: 'jcommander', version: '1.72'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile 'org.eclipse.collections:eclipse-collections-api:10.0.0'
+    compile 'org.eclipse.collections:eclipse-collections:10.0.0'
+    implementation 'org.apache.commons:commons-imaging:1.0-alpha1'
+
+//    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.199'
+    testCompile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.5.0'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.11.1'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.1'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.5.1'
+   
+    // For running tests from intellij
+    testRuntimeClasspath 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+}
+
+//task createTar {
+//
+//    dependsOn clean, build
+//    build.mustRunAfter clean
+//}
